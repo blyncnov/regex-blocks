@@ -96,26 +96,45 @@ Each block represents a real regex concept, explained in plain English.
 ## 🧪 5 Practical Regex Examples
 
 ### 1️⃣ Match a 3-digit number
-**Blocks:** `\d` → `{3}`
-**Regex:** `\d{3}`
-**Matches:** `123`, `999`
+**Blocks:**
+`\d` → `{3}`
+
+**Regex:**
+`\d{3}`
+
+**Matches:**
+`123`, `999`
 
 ### 2️⃣ Match a username (letters + numbers)
-**Blocks:** `\w` → `+`
-**Regex:** `\w+`
-**Matches:** `john123`, `user_1`
+**Blocks:**
+`\w` → `+`
+
+**Regex:**
+`\w+`
+
+**Matches:**
+`john123`, `user_1`
 
 ### 3️⃣ Match a phone number like 123-456
-**Blocks:** `\d` → `{3}` → `-` → `\d` → `{3}`
-**Regex:** `\d{3}-\d{3}`
+**Blocks:**
+`\d` → `{3}` → `-` → `\d` → `{3}`
+
+**Regex:**
+`\d{3}-\d{3}`
 
 ### 4️⃣ Match text that starts with a digit and ends with a letter
-**Blocks:** `^` → `\d` → `.` → `*` → `\w` → `$`
-**Regex:** `^\d.*\w$`
+**Blocks:**
+`^` → `\d` → `.` → `*` → `\w` → `$`
+
+**Regex:**
+`^\d.*\w$`
 
 ### 5️⃣ Match either cat or dog
-**Blocks:** `(` → `cat` → `|` → `dog` → `)`
-**Regex:** `(cat|dog)`
+**Blocks:**
+`(` → `cat` → `|` → `dog` → `)`
+
+**Regex:**
+`(cat|dog)`
 
 ---
 

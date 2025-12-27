@@ -4,7 +4,7 @@ export default function Sidebar() {
   const categories: string[] = [...new Set(BLOCKTYPES.map((b) => b.category))];
 
   return (
-    <aside className="min-h-screen bg-[#111] p-4 overflow-y-scroll">
+    <aside className="w-full h-full bg-[#111] p-4">
       <div className="w-full flex flex-col gap-4">
         <header>
           <h2 className="text-lg font-semibold text-gray-200">Regex Blocks</h2>

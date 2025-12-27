@@ -31,7 +31,7 @@ export default function RegexOutput({
   };
 
   return (
-    <aside className="w-full p-4 bg-zinc-900 h-full flex flex-col gap-4">
+    <aside className="w-full h-full p-4 bg-zinc-900 flex flex-col gap-4">
       <div className="flex items-center justify-between">
         <h3 className="text-lg font-semibold text-zinc-100">Generated Regex</h3>
         {regex && (

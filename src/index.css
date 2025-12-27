@@ -20,7 +20,7 @@
 }
 
 body {
-  color: #fff;
+  color: #333;
   font-size: 15px;
   background: #0f0f0f;
   font-family: Inter, system-ui, sans-serif;
@@ -41,4 +41,8 @@ button {
 ::-webkit-scrollbar-thumb {
   background: #222;
   border-radius: 4px;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }

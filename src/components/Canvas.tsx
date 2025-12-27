@@ -43,7 +43,7 @@ export default function Canvas({ blocks, setBlocks }: CanvasProps) {
     <main
       onDragOver={handleDragOver}
       onDrop={handleDrop}
-      className="w-full canvas flex flex-wrap items-start justify-start gap-1.5 bg-[#0b0b0b] p-6 flex-1 min-h-screen overflow-y-scroll col-span-2"
+      className="w-full canvas flex flex-wrap items-start justify-start gap-1.5 bg-[#0b0b0b] p-6 flex-1 min-h-screen overflow-y-scroll"
     >
       {blocks.length === 0 && (
         <div>

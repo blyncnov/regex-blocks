@@ -1,15 +1,20 @@
 import { useState } from "react";
-import { Check, Copy } from "lucide-react";
+import { Check, Copy, Play } from "lucide-react";
 import { generateRegex } from "../helpers/generate-regex";
 
 import type { CanvasBlock } from "../types";
 
 type CanvasProps = {
   blocks: CanvasBlock[];
+  onTestClick: () => void;
   setBlocks: React.Dispatch<React.SetStateAction<CanvasBlock[]>>;
 };
 
-export default function RegexOutput({ blocks, setBlocks }: CanvasProps) {
+export default function RegexOutput({
+  blocks,
+  setBlocks,
+  onTestClick,
+}: CanvasProps) {
   const regex = generateRegex(blocks);
   const [copied, setCopied] = useState(false);
 
@@ -26,7 +31,7 @@ export default function RegexOutput({ blocks, setBlocks }: CanvasProps) {
   };
 
   return (
-    <aside className="col-span-1 p-4 bg-zinc-900 flex flex-col gap-4">
+    <aside className="w-full p-4 bg-zinc-900 h-full flex flex-col gap-4">
       <div className="flex items-center justify-between">
         <h3 className="text-lg font-semibold text-zinc-100">Generated Regex</h3>
         {regex && (
@@ -37,13 +42,14 @@ export default function RegexOutput({ blocks, setBlocks }: CanvasProps) {
       </div>
 
       <div className="relative group">
-        <pre className="w-full bg-black p-4 rounded-xl overflow-x-auto font-mono text-sm cursor-text text-zinc-300 border border-zinc-800 flex items-center">
-          {regex || (
-            <span className="text-zinc-600 italic select-none text-sm">
-              (empty pattern)
-            </span>
-          )}
-        </pre>
+        <input
+          type="text"
+          value={regex}
+          // onChange={(e) => {}}
+          placeholder="(empty pattern)"
+          className="w-full bg-black p-4 rounded-xl overflow-x-auto font-mono text-sm cursor-text text-zinc-300 border border-zinc-800 flex items-center focus:outline-none focus:ring-2 focus:ring-zinc-700"
+          readOnly
+        />
       </div>
 
       <button
@@ -73,7 +79,14 @@ export default function RegexOutput({ blocks, setBlocks }: CanvasProps) {
         )}
       </button>
 
-      {/* ADD CLEAR ALL BUTTON */}
+      <button
+        onClick={onTestClick}
+        className="w-full py-2 px-4 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer bg-purple-800 text-white hover:bg-purple-700 active:scale-[0.98]"
+      >
+        <Play className="w-4 h-4" />
+        Test
+      </button>
+
       <button
         onClick={() => setBlocks([])}
         className="w-full py-2 px-4 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer bg-red-600 text-white hover:bg-red-500 active:scale-[0.98]"

@@ -46,7 +46,7 @@ export default function Home() {
             onClick={() => setShowTestModal(false)}
           >
             <div
-              className={`bg-white shadow-2xl w-full h-auto max-h-[80vh] md:max-h-screen rounded-tr-2xl rounded-tl-2xl md:rounded-none! py-4 md:py-0 md:h-screen md:max-w-xl overflow-y-scroll hide-scrollbar transform transition-transform duration-300 ease-out ${
+              className={`bg-white shadow-2xl w-full h-auto max-h-[80vh] md:max-h-screen rounded-tr-2xl rounded-tl-2xl md:rounded-none! py-4 md:py-0 md:h-screen md:max-w-125 overflow-y-scroll hide-scrollbar transform transition-transform duration-300 ease-out ${
                 showTestModal
                   ? "translate-y-0 md:translate-x-0"
                   : "translate-y-full md:translate-x-full"
